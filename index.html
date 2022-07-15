@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <title>몰입캠프</title>
+</head>
+
+<body>
+    <div class="all">
+        <nav class="navbar">
+            <a class="navbar-brand" href="#">
+                <img class="madcamp-logo" src="./assets/mad_logo.png" alt="몰입캠프 로고">
+            </a>
+            <div class="navbar_login_signin">
+                <ul>
+                    <li><a href="">로그인</a></li>
+                    <li><a href="">회원가입</a></li>
+                </ul>
+            </div>
+            <ul class="navbar_nav">
+                <!-- loop 게시판 목록 -->
+                <li><a href="">게시판</a></li>
+                <li><a href="">14기</a></li>
+            </ul>
+        </nav>
+        <div class="main">
+            <form class="main-search-admin-profile" role="search">
+                <input class="input search-all" type="search" name="search-all" placeholder="전체 검색" aria-label="Search">
+                <button class="button search-all">검색</button>
+                <!-- todo: 유저/관리자 버튼은 뭘로 만들지? -->
+                <!-- todo: 프로필 이미지 -->
+            </form>
+            <div class="main_noti_best">
+                <div class="main_noti_board">
+                    <h3 class="main_head_comp"><a href="">공지사항</a></h3>
+                    <ul class="main_noti_ul">
+                        <!-- loop 3개 -->
+                        <li class="main_noti_li">
+                            <div class="main_noti">
+                                <div><a>공지내용</a></div>
+                                <div>날짜시간</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="main_best_board">
+                    <h3 class="main_head"><a href="">인기글</a></h3>
+                    <ul class="main_best_ul">
+                        <!-- loop 3개 -->
+                        <li class="main_best_li">
+                            <div class="main_best_headline">
+                                <div><a href="">추천글 제목</a></div>
+                                <div>익명</div>
+                                <div>날짜시간</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main_default_board">
+                <h3 class="main_default_head">일반게시판</h3>
+                <ul class="main_default_ul">
+                    <!-- loop 5개  -->
+                    <li class="main_default_li">
+                        <div class="main_default_headline">
+                            <div><a href="">일반게시판 최신글</a></div>
+                            <div>익명</div>
+                            <div>날짜시간</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="main_group_board">
+                <h3 class="main_group_head">몰입캠프 14기</h3>
+                <ul class="main_group_ul">
+                    <!-- loop 5개  -->
+                    <li class="main_group_li">
+                        <div class="main_group_headline">
+                            <div><a href="">몰입캠프 14기 최신글</a></div>
+                            <div>익명</div>
+                            <div>날짜 시간</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
