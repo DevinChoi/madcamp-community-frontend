@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: row;
     height: 100%;
-    height: 969px;
+    /* height: 969px; */
 }
 
 nav {
@@ -18,7 +18,6 @@ nav {
     justify-content: space-between;
     background-color: #8C8C8C;
     width: 292px;
-
     padding: 0px 40px 0px;
 
 }
@@ -193,12 +192,13 @@ nav {
     width: 1200px;
     display: flex;
     flex-direction: column;
-    padding: 30px 0px 30px 50px;
+    padding: 30px 0px 0 50px;
 }
 
 header {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     height: 50px;
 }
 
@@ -294,33 +294,222 @@ header {
     height: 100%;
     border-radius: 100%;
 }
-
-.main_center {}
+/* 여기부터 */
+.main_center {
+    display: flex;
+    flex-direction: column;
+}
 
 .row-0 {
-    .make-row();
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+}
+.col {
+	flex: 0 1 50%;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+.noti_list {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+}
 
-    .col-0-0 {
-        .make-xs-column(6);
-    }
+.noti_title{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 10px 0px 15px;
+    padding: 0px 0px 0px 15px;
+}
+.noti_list_ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    border: 1px #F1F1F1 solid;
+    border-radius: 10px;
+    margin-bottom: 7px;
+    padding-left: 10px;
+    
+}
 
-    .col-0-1 {
-        .make-xs-column(6);
-    }
+
+.noti_list_title {
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.noti_list_title {
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+    gap: 40px;
+
+}
+
+.noti_list_location {
+    color: #8C8C8C;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.noti_list_time {
+    color: #8C8C8C;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.best_title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 10px 0px 15px;
+    padding: 0px 0px 0px 15px;
+}
+
+.best_list {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.best_list_ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    border: 1px #F1F1F1 solid;
+    border-radius: 10px;
+    margin-bottom: 7px;
+    padding-left: 10px;
+}
+
+.best_list_title {
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.best_list_sub {
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+    gap: 40px;
+
+}
+
+.best_list_heart {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.best_list_comment {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.best_list_name {
+    color: #8C8C8C;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.best_list_time {
+    color: #8C8C8C;
+    font-size: 0.9em;
+    font-weight: 600;
 }
 
 .row-1 {
-    .make-row();
-
-    .col-1-0 {
-        .make-md-column(1);
-    }
+    
+    display: flex;
+    flex-direction: column;
 }
 
-.row-2 {
-    .make-row();
+.col-normal {
+    
+}
 
-    .col-2-0 {
-        .make-md-column(1);
-    }
+.main_title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 30px 0px 30px;
+    padding: 0px 0px 0px 30px;
+
+}
+
+.main_list {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.main_list_ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    border: 1px #F1F1F1 solid;
+    border-radius: 10px;
+    margin-bottom: 7px;
+    padding-left: 10px;
+}
+
+.main_list_title {
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.main_list_sub {
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+    gap: 40px;
+
+}
+
+.main_list_heart {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.main_list_comment {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.main_list_name {
+    color: #8C8C8C;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.main_list_time {
+    color: #8C8C8C;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.row-2 {}
+
+.col-group {
+    
 }
