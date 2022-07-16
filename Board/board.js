@@ -1,25 +1,39 @@
-
-
 const boardParent = document.querySelector('.main_list');
-let boardItem = ``;
-boardLoad();
+const roleUser = document.querySelector('.head_role_user');
+const roleCreaater = document.querySelector('.head_role_Creator');
 
-function boardLoad() {
+
+
+var pagenum = 1;
+var type = 2;
+var totalCount = 0;
+boardLoad(type, pagenum);
+
+
+// 관리자페이지
+setUser("USER");
+
+// 게시글 10개 가져오기 ///////////////////////////////////////
+function boardLoad(type, pagenum) {
     $.ajax({
+
         type: "get",
         // type 동적으로 처리하기
-        url: `/board?type=2&pagenum=1`,
+        url: `/board?type=${type}&pagenum=${pagenum}`,
         dataType: "text",
         success: function (data) {
             let boardListObj = JSON.parse(data);
-            boardItem += getBoards(boardListObj);
+            let boardItem = ``;
+            boardItem += getBoards(boardListObj.boardList);
+            totalCount = boardListObj.count;
             boardParent.innerHTML = boardItem;
-
         },
         error: function () {
-            alert('비동기 처리오류');
+            alert('board 비동기 처리오류');
         }
+
     });
+
 }
 function getBoards(boardList) {
     let boardHtml = ``;
@@ -27,7 +41,7 @@ function getBoards(boardList) {
         boardHtml += `
          <ul class="main_list_ul">
             <li class="main_list_title">
-                <a href="#">${board.title}</a>
+                <a href='${board.id}'>${board.title}</a>
             </li>
             <div class="main_list_sub">
                 <li class="main_list_heart">
@@ -63,5 +77,48 @@ function getBoards(boardList) {
 
     }
     return boardHtml;
-
 }
+// 게시글 10개 가져오기 ///////////////////////////////////////
+
+
+// 밑에 숫자 가져오기
+function getNumber(count) {
+    let numHtml = `
+         <ul class="numbers">
+            <li id="clicknum" class="numbtn">1</li>`;
+    var num = count % 10;
+    for (let i = 0; i < num; i++) {
+        numHtml += `<li class="numbtn">${i + 2}</li>`
+    }
+    numHtml += `</ul>`;
+
+    return numHtml;
+}
+
+// 관리자인지 일반 유저인지
+function setUser(role) {
+    if (role == "ADMIN") {
+        alert(role);
+        roleCreaater.style.color = "#5429FF";
+        roleCreaater.style.backgroundColor = "#ffffff";
+        roleUser.style.color = "#8C8C8C";
+        roleUser.style.backgroundColor = "#F1F1F1";
+    }
+}
+
+setTimeout(() => {
+    const numList = document.querySelector('.main_num_list');
+    numList.innerHTML = getNumber(totalCount);
+    const numbers = document.querySelectorAll('.numbtn');
+    alert(numbers.length);
+    for (let i = 0; i < numbers.length; i++) {
+        numbers[i].onclick = () => {
+            for (let j = 0; j < numbers.length; j++) {
+                numbers[j].id = '';
+            }
+            numbers[i].id = 'clicknum';
+            boardLoad(type, numbers[i].textContent);
+        }
+
+    }
+}, 1000);
