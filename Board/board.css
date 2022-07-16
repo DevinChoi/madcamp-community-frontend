@@ -3,6 +3,11 @@
     margin: 0;
     box-sizing: border-box;
     list-style: none;
+
+}
+
+a {
+    text-decoration: none;
 }
 
 .container {
@@ -43,7 +48,7 @@ nav {
     margin-top: 20px;
 }
 
-.nav_auth h5 {
+.nav_auth a {
     font-size: 1.001em;
     font-weight: 700;
     color: #2E2E2E;
@@ -62,7 +67,7 @@ nav {
     display: flex;
     flex-direction: row;
     gap: 25px;
-    margin-top: 10px;
+    margin-top: 20px;
     cursor: pointer;
 }
 
@@ -164,6 +169,7 @@ nav {
     font-weight: 900;
     margin-left: 5px;
     font-size: 1.5em;
+    border: none;
 }
 
 .nav_view_count_per {
@@ -328,9 +334,18 @@ header {
 }
 
 .main_list_title {
-    font-size: 1.1em;
     font-weight: bold;
     cursor: pointer;
+}
+
+.main_list_title a {
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    color: black;
+    border-style: none;
+    text-decoration: none;
+
 }
 
 .main_list_sub {
@@ -378,7 +393,7 @@ header {
     margin-top: 30px;
 }
 
-.num {
+.numbtn {
     display: flex;
     justify-content: center;
     align-items: center;
